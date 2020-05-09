@@ -1,10 +1,9 @@
 # Urne B
 
-# Exercice 2
-
+# Exercice 2 ----
 # 3. ----
 read.csv("notes.csv") -> notes
-nconf <- 0.9
+nconf <- 0.90
 
 Id <- notes$Id
 math <- notes$math
@@ -20,8 +19,8 @@ sdMatA <- 2
 xbMatA <- mean(notMatA)
 U <- qnorm(1-(1-nconf)/2)
 erreurMatA <- U*sdMatA/sqrt(lenMatA)
-binfMatA <- xbMatA - erreurMatA
 bsupMatA <- xbMatA + erreurMatA
+binfMatA <- xbMatA - erreurMatA
 
 remove(list=ls())
 
@@ -133,3 +132,47 @@ binf = F - erreur
 bsup = F + erreur
 
 remove(list=ls())
+
+# Exercice 3----
+
+# 1. ----
+read.csv("notes.csv") -> notes
+
+Id <- notes$Id
+math <- notes$math
+franc <- notes$franc
+lycee <- as.numeric(notes$lycee)
+notMatA <- math[lycee == 1] # "a" = 1
+
+t.test(notMatA, mu = 13)
+
+remove(list=ls())
+
+
+# 2. ----
+# H0 n'était pas rejetée, pval (suffisamment grande) > alpha
+# 3. ----
+read.csv("notes.csv") -> notes
+
+Id <- notes$Id
+math <- notes$math
+franc <- notes$franc
+lycee <- as.numeric(notes$lycee)
+notMatB <- math[lycee == 2] # "b" = 2
+
+t.test(notMatB, mu = 13)
+
+remove(list=ls())
+# 4. ----
+read.csv("notes.csv") -> notes
+
+Id <- notes$Id
+math <- notes$math
+franc <- notes$franc
+lycee <- as.numeric(notes$lycee)
+notMatB <- math[lycee == 2] # "b" = 2
+
+t.test(notMatB, mu = 13,alternative = "less")
+
+remove(list=ls())
+
