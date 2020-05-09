@@ -1,6 +1,6 @@
 # TP-Calculatrice
 
-On travaille sur l'urne B 
+On travaille sur l'urne B dans le fichier BB.r
 Exercices à faire: 
 Ex2 : Q 3 à 8 
 Ex3 : Q 1 à 6 
