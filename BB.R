@@ -101,7 +101,16 @@ lycee <- as.numeric(notes$lycee)
 lenLyc <- length(lycee)
 lenLycA <- length(lycee[lycee==1])
 
+F <- lenLycA/lenLyc
+U <- qnorm(1-(1-nconf)/2)
+erreur <- U*(sqrt((F*(1-F))/lenLyc))
+
+#Methode 1
 prop.test(lenLycA,lenLyc,conf.level=nconf)
+
+#Methode 2
+binf = F - erreur
+bsup = F + erreur
 
 remove(list=ls())
 # 8. ----
@@ -113,8 +122,14 @@ lycee <- as.numeric(notes$lycee)
 lenLyc <- length(lycee)
 lenLycB <- length(lycee[lycee==2])
 
+F <- lenLycB/lenLyc
+U <- qnorm(1-(1-nconf)/2)
+erreur <- U*(sqrt((F*(1-F))/lenLyc))
+
+#Methode 1
 prop.test(lenLycB,lenLyc,conf.level=nconf)
+#Methode 2
+binf = F - erreur
+bsup = F + erreur
 
 remove(list=ls())
-
-# Exerceic
