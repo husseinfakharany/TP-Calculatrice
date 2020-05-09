@@ -1,0 +1,160 @@
+            [14:58] Welcome to <b>TP calculette</b>!<br><br>For help on using BigBlueButton see these (short) <a href="http://www.bigbluebutton.org/html5" target="_blank"><u>tutorial videos</u></a>.<br><br>To join the audio bridge click the phone button.  Use a headset to avoid causing background noise for others.<br><br>This server is running <a href="http://docs.bigbluebutton.org/" target="_blank"><u>BigBlueButton</u></a>.
+[14:59] Frederique Leblanc : Bonjour
+[14:59] Juliette : Bonjour
+[15:01] Frederique Leblanc : liste 1 : math lycee A
+[15:01] Frederique Leblanc : liste 2 francais lycee A
+[15:01] Frederique Leblanc : liste 3 math B
+[15:02] Frederique Leblanc : liste 4 français lycée B
+[15:02] Frederique Leblanc : liste 5 : liste 1-liste 2
+[15:02] Frederique Leblanc : liste 6 = liste3-liste 4
+[15:03] Frederique Leblanc : aujourd'hui on utilise liste 1 et liste 3
+[15:03] Frederique Leblanc : partie statistique :
+[15:04] Frederique Leblanc : utilisation du menu sta var 1
+[15:04] Frederique Leblanc : utilisatio intervalles de confiance pour une moyenne (sigma connu ou pas)
+[15:04] Frederique Leblanc : test de comparaison de moyennes avec ech indep
+[15:06] Frederique Leblanc : retourner les resumés statistiques de note math lycée A  summary et sd
+[15:07] Frederique Leblanc : [stats]/calc/stats 1-var
+[15:08] Frederique Leblanc : en entrée liste 1, effectifs =1
+[15:10] Frederique Leblanc : car liste 1=x1,x2,....,xn
+[15:10] Isra : On vous entend
+[15:11] Delphine : 11,875
+[15:11] Frederique Leblanc : va?eur de l'esb de mu
+[15:11] Souici : 11,875
+[15:11] Frederique Leblanc : valeur de l'esb de sigma
+[15:11] Souici : 2,533
+[15:11] Delphine : 2,5327
+[15:13] Frederique Leblanc : attention notations calculette sigmax de la calculette designe le s du cours
+[15:13] Frederique Leblanc : et sx de la calculette designe le s' du cours
+[15:14] Delphine : oui
+[15:14] Souici : 10,05
+[15:14] Delphine : 10,05
+[15:14] Frederique Leblanc : les quartiles sont-ils retournés si oui que vaut q_O,25 de l'echantillon
+[15:14] Juliette : oui c'est bon
+[15:16] Frederique Leblanc : pb sur les ics par ex cherchons l'ic pour mu avec sigma connu. Rappel pour pouvoir l'utiliser il faut supposer que X (math lycéée A) suit une loi normale et on note mu et sigma ses paramètres.
+[15:16] Frederique Leblanc : IC sur mu au niveau 0.8 avec sigma connu et valant 2
+[15:16] Frederique Leblanc : quelle fonction de la TI ?
+[15:18] Frederique Leblanc : [stats]/tests/ZIntConf car sigma connu
+[15:19] Pacheco : 11.135,12.615
+[15:19] Juliette : j'ai pareil
+[15:20] Frederique Leblanc : faisons la même chose pour sigma inconnu meme niveau et meme echantillon
+[15:20] Frederique Leblanc : [stats]/tests/TIntConf
+[15:21] Pacheco : (10,878;12,872)
+[15:22] Frederique Leblanc : ok sur les IC sur mu ? questions ?
+[15:23] Frederique Leblanc : IC sur p : proportion d'élèves du lycée A dans la pouplation conjointre lyceeA+lyceeB
+[15:24] Frederique Leblanc : IC sur p niveau 0.8
+[15:25] Frederique Leblanc : [stats]/tests/1-propZInt utilisable que si n=26 assez grand et verifie nf>10 et n(1-f)>10
+[15:26] Frederique Leblanc : x ? n ?
+[15:26] Frederique Leblanc : quelles sont les entrée en R de prop.test ?
+[15:28] Frederique Leblanc : x ? et n?
+[15:28] Pacheco : X =12?
+[15:28] Pacheco : N = 26
+[15:29] Pacheco : Ah oui pardon
+[15:29] Pacheco : (0,3362;0,5868)
+[15:30] Delphine : j'ai pareil
+[15:30] Isra : (0.3362, 0.586)
+[15:30] Isra : ou
+[15:30] Isra : oui
+[15:31] Frederique Leblanc : le lycée a t-il en moyenne un effet sur la note de math ?
+[15:31] Frederique Leblanc : on dispose des ech liste 1 (ech de X)
+[15:31] Frederique Leblanc : et liste 3 (ech de Y : note de math B de moyenne muY et son ecart-type sigmaY)
+[15:32] Frederique Leblanc : et pareil pour les notations sur X :mux et sigmaX
+[15:32] Frederique Leblanc : questions : ech appariés ou non ?
+[15:33] Frederique Leblanc : sont-ils appariés ? vont -ils par deux ?
+[15:33] Juliette : non ils sont indépedants?
+[15:34] Frederique Leblanc : oui ils sont independants
+[15:34] Frederique Leblanc : quelles sont les hypothéses requises (de modelisation) pour faire le test de comp des moyennes ?
+[15:36] Pacheco : Que X-Y suit une loi normale N(MuX-muY, sigmaX^2+sigmaY^2)?
+[15:36] Pacheco : D'accord
+[15:36] Frederique Leblanc : non dans le cas indep il faut X et Y normales
+[15:37] Frederique Leblanc : et en plus comme les echantillons sont petits on doit aussi supposer l'egalité des variances
+[15:38] Frederique Leblanc : quelle est H0 ?
+[15:38] Frederique Leblanc : quelle est H1 ?
+[15:38] Souici : H0 y a une moyenne
+[15:38] Souici : H1 y a pas une moyenne
+[15:39] Souici : H0 y a une moyenne en maths
+[15:40] Pacheco : Ho: muX-muY=0?
+[15:42] Frederique Leblanc : comment traduire en math avec les paramètres inconnus même moyenne dans les deux lycées ?
+[15:42] Souici : C est a dire >=10
+[15:43] Frederique Leblanc : H0 : muX=muY
+[15:44] Frederique Leblanc : H1 : muX different de muY
+[15:44] Frederique Leblanc : test bilateral avec H0 : muX-muY=0
+[15:45] Frederique Leblanc : [stats]/tests/2-Ttest
+[15:46] Frederique Leblanc : cible sous H0 est ici la valeur 0 car on prend muX-muY=0
+[15:46] Frederique Leblanc : groupée ? ou pooled ?
+[15:46] Pacheco : Je trouve rien qui ressemble à "2-Ttest"
+[15:47] Isra : Il y a T-test sur 2 échantillons
+[15:47] Frederique Leblanc : oui c'ets ça
+[15:47] Delphine : il y Z-Test ou T-Test
+[15:47] Frederique Leblanc : tcalc ? et pval ?
+[15:48] Pacheco : Tcalc=7.707 alors
+[15:48] Juliette : je trouve ça aussi
+[15:49] Frederique Leblanc : etes vous sure que liste 3 =notes maths lycée B de taille 14 ?
+[15:49] Frederique Leblanc : avez vous coché oui pour données groupées soit memes variances
+[15:50] Pacheco : Moi j'ai pas tout ça
+[15:50] Pacheco : Je suis dans T-test
+[15:51] Delphine : C'est dans 2-CompTtest non ?
+[15:51] Pacheco : Ah OK ça j'ai Delphine
+[15:51] Frederique Leblanc : oui  [stats]/tests/2-Ttest
+[15:52] Pacheco : Et du coup pooled on coche oui c'est ça ?
+[15:53] Pacheco : Tcalc=1.086 du coup et pval=0.2882
+[15:53] Frederique Leblanc : oui ca veut dire varaince egales
+[15:53] Delphine : j'ai pareil
+[15:53] Frederique Leblanc : avec R t.test(ma,mb,mu=0,paired=F,var.equal=T)#on ne peut valider H1 de façon signif car pval trop gde
+[15:55] Frederique Leblanc : ok pour ce dernier résultat et conclusion littérale : ici on ne peut pas rejeter aucun effet en moyenne à moins de prendre un risuqe de se tromper supérieur à 29%
+[15:56] Frederique Leblanc : Rien de statistiquement significatif ne permet de dire qu'en moyenne lycée A meilleur que lycée B en math (car pval trop gde).
+[15:56] Frederique Leblanc : Donc pas de test unilateral
+[15:57] Frederique Leblanc : ou si on part directement sur un unilateral car on veut montrer ou non que A meilleur que B dans ce cas on prend H1 : muX>muY
+[15:57] Frederique Leblanc : et H0 : muX<=muY
+[15:58] Juliette : dans le cas unilatéral , c'est possible de changer H0 et H1?
+[15:59] Frederique Leblanc : avec des ech de tailles respec 120 et 140 alors l'hypothese de modélisation d'egalite des variances pas indipensable et dans ce cas on met pooled = non
+[15:59] Frederique Leblanc : avec R var.equal=F
+[16:00] Frederique Leblanc : H0 : muX>muY et H1 : muX<=muY ?
+[16:00] Juliette : oui
+[16:00] Juliette : ok merci
+[16:01] Frederique Leblanc : H0 : moyenne liste 1=moyenne liste 2
+[16:01] Frederique Leblanc : c'est débile ? parceque je n'ai pas besoin d'un test pour comparer deux valeurs connues car calculées sur les echantillons
+[16:01] Frederique Leblanc : c'est clair ?
+[16:03] Frederique Leblanc : calcul de proba
+[16:03] Frederique Leblanc : X normale de moyenne 2 et ecart-type 3 calcul de P(0<X<4)
+[16:04] Frederique Leblanc : TI : [distrib]/normalFRép (a,b,μ, σ)
+[16:04] Frederique Leblanc : [ST AT ]/DIST/ NORM, choisir Ncd
+[16:05] Frederique Leblanc : attention en casio à l'ordre des entrées : borneinf, bornesup, ecart-type et moyen
+[16:05] Frederique Leblanc : en TI borneinf borne sup  moy et et
+[16:06] Frederique Leblanc : meme X avec l'intervalle [-4,4] et ]-inf,4]
+[16:07] Isra : 0,49 ?
+[16:07] Delphine : j'ai pareil
+[16:08] Frederique Leblanc : avec R pnorm(4,2,3)-pnorm(0,2,3)
+[16:08] Isra : Puis 0,72 entre -4 et 4
+[16:08] Delphine : idem
+[16:09] Delphine : 0,7475
+[16:09] Isra : pareil
+[16:09] Frederique Leblanc : a savoir faire en chideux et student
+[16:10] Frederique Leblanc : calculons un quantile : celui de X N(2,3^2) d'ordre 0.8
+[16:10] Frederique Leblanc : TI :[distrib]/Fracnormal (p,μ, σ)
+[16:11] Frederique Leblanc : Casio :[ST AT ]/DIST/ NORM, choisir invN
+[16:12] Frederique Leblanc : attention pas possible ici d'utiliser direct la lecture des tables car on n'est pas avec une N(0,1)
+[16:13] Frederique Leblanc : area=aire=p=0.8
+[16:13] Delphine : 4,5249
+[16:13] Frederique Leblanc : meme question pour X de loi de Student à 11 dl ?
+[16:14] Frederique Leblanc : en TI si pas inv T utiliser les tables stats
+[16:14] Frederique Leblanc : en Casio invT existe et bien definir tail=left
+[16:15] Isra : Merci beaucoup, bonne fin de journée
+[16:16] Delphine : Bonne fin de journée, merci
+[16:16] Guillerme : Bonjour
+[16:17] Guillerme : Non je viens d’arriver
+[16:17] Juliette : l'oral de la semaine pro c'est le dm calculette que vous avez envoyé c'est ça?
+[16:17] Juliette : ça marche!
+[16:19] Isra : D'accord merci
+[16:19] Juliette : ok merci beaucoup à la semaine prochaine
+[16:19] Souici : D accord merci
+[16:21] Guillerme : Oui
+[16:21] Guillerme : Oui pouquoi pas
+[16:22] Frederique Leblanc : liste 1 : 12 valeurs notes math A
+[16:23] Frederique Leblanc : X : variable note de math lycee A et muX sa moyenne et sigmaX son ecart-type
+[16:23] Frederique Leblanc : esb de muX ? et sesb de sigmaX ?
+[16:24] Frederique Leblanc : ST AT ]/CALC/SET... [1-var Xlist /LIST... L 1 ] / 1var
+[16:25] Guillerme : Moi j’ai tout rentré
+[16:26] Guillerme : 12.37 pour muX
+[16:35] Frederique Leblanc : [ST AT ]/INTR/Z/1-s
+[16:40] Frederique Leblanc : IC sur p : proportion d'élèves du lycée A dans la pouplation conjointre lyceeA+lyceeB
+[16:40] Frederique Leblanc : [ST AT ]/INTR/Z/1-p
