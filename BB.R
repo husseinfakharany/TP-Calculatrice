@@ -178,7 +178,7 @@ remove(list=ls())
 
 
 # Exercice 4 ----
-# 1. 3. ----
+# 1. 7. ----
 read.csv("notes.csv") -> notes
 
 math <- notes$math
@@ -190,7 +190,7 @@ notFrA <- franc[lycee == 1]
 t.test(notMatA,notFrA,alternative = "less")
 
 remove(list=ls())
-# 2. 4. ----
+# 2. 8. ----
 read.csv("notes.csv") -> notes
 
 math <- notes$math
