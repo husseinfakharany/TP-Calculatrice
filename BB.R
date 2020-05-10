@@ -133,7 +133,7 @@ bsup = F + erreur
 
 remove(list=ls())
 
-# Exercice 3----
+# Exercice 3 ----
 
 # 1. ----
 read.csv("notes.csv") -> notes
@@ -176,3 +176,29 @@ t.test(notMatB, mu = 13,alternative = "less")
 
 remove(list=ls())
 
+
+# Exercice 4 ----
+# 1. 3. ----
+read.csv("notes.csv") -> notes
+
+math <- notes$math
+franc <- notes$franc
+lycee <- as.numeric(notes$lycee)
+notMatA <- math[lycee == 1] # "a" = 1
+notFrA <- franc[lycee == 1]
+
+t.test(notMatA,notFrA,alternative = "less")
+
+remove(list=ls())
+# 2. 4. ----
+read.csv("notes.csv") -> notes
+
+math <- notes$math
+franc <- notes$franc
+lycee <- as.numeric(notes$lycee)
+notMatB <- math[lycee == 2] # "b" = 2
+notFrB <- franc[lycee == 2]
+
+t.test(notMatB,notFrB,alternative = "less")
+
+remove(list=ls())
