@@ -144,7 +144,7 @@ franc <- notes$franc
 lycee <- as.numeric(notes$lycee)
 notMatA <- math[lycee == 1] # "a" = 1
 
-t.test(notMatA, mu = 13)
+t.test(notMatA, mu = 13) # stats > TESTS > T-Test
 
 remove(list=ls())
 
@@ -187,7 +187,7 @@ lycee <- as.numeric(notes$lycee)
 notMatA <- math[lycee == 1] # "a" = 1
 notFrA <- franc[lycee == 1]
 
-t.test(notMatA,notFrA,alternative = "less")
+t.test(notMatA,notFrA,alternative = "less") # stats > TESTS > T-Test 2 ech (Groupé: NON)
 
 remove(list=ls())
 # 2. 8. ----
@@ -199,6 +199,6 @@ lycee <- as.numeric(notes$lycee)
 notMatB <- math[lycee == 2] # "b" = 2
 notFrB <- franc[lycee == 2]
 
-t.test(notMatB,notFrB,alternative = "less")
+t.test(notMatB,notFrB,alternative = "less") 
 
 remove(list=ls())
