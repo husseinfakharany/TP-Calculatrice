@@ -178,7 +178,7 @@ remove(list=ls())
 
 
 # Exercice 4 ----
-# 1. 7. ----
+# 1. ----
 read.csv("notes.csv") -> notes
 
 math <- notes$math
@@ -190,7 +190,8 @@ notFrA <- franc[lycee == 1]
 t.test(notMatA,notFrA,alternative = "less") # stats > TESTS > T-Test 2 ech (Groupé: NON)
 
 remove(list=ls())
-# 2. 8. ----
+# 2. ----
+
 read.csv("notes.csv") -> notes
 
 math <- notes$math
@@ -202,3 +203,40 @@ notFrB <- franc[lycee == 2]
 t.test(notMatB,notFrB,alternative = "less") 
 
 remove(list=ls())
+
+# 7. ----
+read.csv("notes.csv") -> notes
+
+math <- notes$math
+franc <- notes$franc
+lycee <- as.numeric(notes$lycee)
+notMatA <- math[lycee == 1] # "a" = 1
+notFrA <- franc[lycee == 1]
+
+par(mfrow=c(1,2))
+qqnorm(notMatA)
+abline(mean(notMatA),sd(notMatA),col=2)
+qqnorm(notFrA)
+abline(mean(notFrA),sd(notFrA),col=2)
+
+remove(list=ls())
+dev.off()
+
+
+# 8. ----
+read.csv("notes.csv") -> notes
+
+math <- notes$math
+franc <- notes$franc
+lycee <- as.numeric(notes$lycee)
+notMatB <- math[lycee == 2] # "b" = 2
+notFrB <- franc[lycee == 2]
+
+par(mfrow=c(1,2))
+qqnorm(notMatB)
+abline(mean(notMatB),sd(notMatB),col=2)
+qqnorm(notFrB)
+abline(mean(notFrB),sd(notFrB),col=2)
+
+remove(list=ls())
+dev.off()
