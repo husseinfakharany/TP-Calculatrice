@@ -16,7 +16,7 @@ lenMatA <- length(notMatA)
 #Variance connue = 4, sd = 2
 
 sdMatA <- 2
-xbMatA <- mean(notMatA)
+xbMatA <- mean(notMatA) #moyenne empirique
 U <- qnorm(1-(1-nconf)/2)
 erreurMatA <- U*sdMatA/sqrt(lenMatA)
 bsupMatA <- xbMatA + erreurMatA
@@ -143,7 +143,8 @@ math <- notes$math
 franc <- notes$franc
 lycee <- as.numeric(notes$lycee)
 notMatA <- math[lycee == 1] # "a" = 1
-
+mean(notMatA)
+sd(notMatA)
 t.test(notMatA, mu = 13) # stats > TESTS > T-Test
 
 remove(list=ls())
@@ -240,3 +241,7 @@ abline(mean(notFrB),sd(notFrB),col=2)
 
 remove(list=ls())
 dev.off()
+
+# Commentaires ----
+# pval: si on prend un niveau de confiance (ou risque) > que de pval% on accepte H1
+# et vice versa
